@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
 import { io } from "socket.io-client";
-import { SOCKET_SERVER_URL } from "./config";
+import { SOCKET_SERVER_URL } from "./config/env";
 import styled, { createGlobalStyle } from "styled-components";
+import AppRouter from "./config/router";
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -24,6 +25,7 @@ function App() {
   return (
     <StyledApp>
       <GlobalStyle />
+      <AppRouter />
     </StyledApp>
   );
 }
