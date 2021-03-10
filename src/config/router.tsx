@@ -1,5 +1,6 @@
 import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import history from "./history";
+import { Router, Route } from "react-router-dom";
 import Layout from "components/layout";
 import Index from "views/index";
 import HostGame from "views/hostGame";
@@ -10,7 +11,7 @@ import Create from "../views/create";
 
 export default function AppRouter() {
   return (
-    <Router>
+    <Router history={history}>
       <Layout>
         <>
           <Route path="/" exact component={Index}></Route>

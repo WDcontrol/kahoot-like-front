@@ -1,5 +1,5 @@
 export default interface Question {
   question: string;
-  possibleAnswsers: string[];
-  correctAnswer: string;
+  answers: string[];
+  correctAnswer: number;
 }

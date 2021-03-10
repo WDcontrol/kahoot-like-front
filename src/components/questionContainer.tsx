@@ -18,24 +18,16 @@ export default function QuestionContainer({
   index: number;
 }) {
   const [curQuest, setCurQuest] = useState<string>(defaultQuestion.question);
-  const [answer1, setAnswer1] = useState<string>(
-    defaultQuestion.possibleAnswsers[0]
-  );
-  const [answer2, setAnswer2] = useState<string>(
-    defaultQuestion.possibleAnswsers[1]
-  );
-  const [answer3, setAnswer3] = useState<string>(
-    defaultQuestion.possibleAnswsers[2]
-  );
-  const [answer4, setAnswer4] = useState<string>(
-    defaultQuestion.possibleAnswsers[3]
-  );
+  const [answer1, setAnswer1] = useState<string>(defaultQuestion.answers[0]);
+  const [answer2, setAnswer2] = useState<string>(defaultQuestion.answers[1]);
+  const [answer3, setAnswer3] = useState<string>(defaultQuestion.answers[2]);
+  const [answer4, setAnswer4] = useState<string>(defaultQuestion.answers[3]);
 
   useEffect(() => {
     const newQuest: Question = {
       question: curQuest,
-      possibleAnswsers: [answer1, answer2, answer3, answer4],
-      correctAnswer: "test",
+      answers: [answer1, answer2, answer3, answer4],
+      correctAnswer: 1,
     };
     editQuestion(index, newQuest);
   }, [curQuest, answer1, answer2, answer3, answer4]);

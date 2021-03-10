@@ -2,6 +2,9 @@ import styled from "styled-components";
 import Question from "types/Question";
 import QuestionContainer from "components/questionContainer";
 import Button from "components/button";
+import { newQuiz } from "../sockets/emit";
+import Input from "components/input";
+import { useState } from "react";
 
 const StyledCreateContainer = styled.div``;
 
@@ -12,11 +15,13 @@ export default function CreateContainer({
   questions: Question[];
   setQuestions: Function;
 }) {
+  const [name, setName] = useState("");
+
   const addQuestion = (): void => {
     const emptyQuestion: Question = {
       question: "",
-      possibleAnswsers: ["", "", "", ""],
-      correctAnswer: "",
+      answers: ["", "", "", ""],
+      correctAnswer: 1,
     };
 
     setQuestions([...questions, emptyQuestion]);
@@ -38,12 +43,17 @@ export default function CreateContainer({
   };
 
   const handleSubmit = () => {
-    console.log(questions);
+    newQuiz({
+      id: 0,
+      name,
+      questions,
+    });
   };
 
   return (
     <StyledCreateContainer>
       Create Container
+      <Input value={name} setValue={setName} label="Name" />
       {questions.map((question: Question, index: number) => {
         return (
           <QuestionContainer

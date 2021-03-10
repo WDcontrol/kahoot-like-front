@@ -6,6 +6,7 @@ const StyledHostLobby = styled.div``;
 
 export default function HostLobby() {
   const query = useQuery();
-  const code = query.get("code");
-  return <StyledHostLobby>Host Lobby</StyledHostLobby>;
+  const id = query.get("id");
+
+  return <StyledHostLobby>Host Lobby {id}</StyledHostLobby>;
 }
