@@ -32,7 +32,8 @@ export default function Index() {
       return;
     }
 
-    history.push(`/playerLobby?code=${code}`);
+
+    history.push(`/playerLobby?code=${code}&nickname=${nickname}`);
   };
 
   return (

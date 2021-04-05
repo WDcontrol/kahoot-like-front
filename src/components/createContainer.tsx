@@ -21,7 +21,7 @@ export default function CreateContainer({
     const emptyQuestion: Question = {
       question: "",
       answers: ["", "", "", ""],
-      correctAnswer: 1,
+      correct: 1,
     };
 
     setQuestions([...questions, emptyQuestion]);

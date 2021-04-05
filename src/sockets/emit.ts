@@ -1,6 +1,6 @@
 import { socket } from "./index";
-export const hostJoin = (params: any) => {
-  socket.emit("host-join", params);
+export const hostJoin = (id: any) => {
+  socket.emit("host-join", id);
 };
 export const hostJoinGame = (params: any) => {
   socket.emit("host-join-game", params);
@@ -8,8 +8,8 @@ export const hostJoinGame = (params: any) => {
 export const playerJoin = (params: any) => {
   socket.emit("player-join", params);
 };
-export const playerJoinGame = (data: any) => {
-  socket.emit("player-join-game", data);
+export const playerJoinGame = (code: any) => {
+  socket.emit("player-join-game", code);
 };
 export const playerAnswer = (num: any) => {
   socket.emit("playerAnswer", num);

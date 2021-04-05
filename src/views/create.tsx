@@ -9,7 +9,7 @@ export default function Create() {
   const defaultQuestion: Question = {
     question: "What's the color's of Henri IV white horse ?",
     answers: ["red", "white", "black", "yellow"],
-    correctAnswer: 2,
+    correct: 2,
   };
 
   const [questions, setQuestions] = useState<Question[]>([defaultQuestion]);

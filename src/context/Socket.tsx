@@ -1,16 +1,20 @@
-import React, { createContext, useState, useEffect } from "react";
+import { createContext, useState, useEffect } from "react";
 import { initSockets } from "../sockets";
-export const SocketContext = createContext({
-  queueLength: 0,
-  positionInLine: 0,
-});
+
+const defaultContext = { 
+  gamePin: undefined, 
+  userList: [],
+  nameText: "",
+  scoreText:"",
+  correct: false,
+  questionOver: false
+};
+
+export const SocketContext = createContext(defaultContext);
 
 export function SocketProvider(props: any) {
-  const [value, setValue] = useState({
-    queueLength: 0,
-    positionInLine: 0,
-  });
-  useEffect(() => initSockets({ setValue }), [initSockets]);
+  const [value, setValue] = useState(defaultContext);
+  useEffect(() => initSockets({ setValue }), []);
   // Note, we are passing setValue ^ to initSockets
   return (
     <SocketContext.Provider value={value}>

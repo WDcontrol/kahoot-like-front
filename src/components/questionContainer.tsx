@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import styled from "styled-components";
 import Question from "types/Question";
 import Button from "components/button";
 import Input from "components/input";
+import InputNumber from "./inputNumber";
 
 const StyledQuestionContainer = styled.div``;
 
@@ -22,12 +23,13 @@ export default function QuestionContainer({
   const [answer2, setAnswer2] = useState<string>(defaultQuestion.answers[1]);
   const [answer3, setAnswer3] = useState<string>(defaultQuestion.answers[2]);
   const [answer4, setAnswer4] = useState<string>(defaultQuestion.answers[3]);
+  const [correctAnswer, setCorrectAnswer] = useState<number>(0);
 
   useEffect(() => {
     const newQuest: Question = {
       question: curQuest,
       answers: [answer1, answer2, answer3, answer4],
-      correctAnswer: 1,
+      correct: 1,
     };
     editQuestion(index, newQuest);
   }, [curQuest, answer1, answer2, answer3, answer4]);
@@ -39,6 +41,11 @@ export default function QuestionContainer({
       <Input label={`Answer 2`} value={answer2} setValue={setAnswer2} />
       <Input label={`Answer 3`} value={answer3} setValue={setAnswer3} />
       <Input label={`Answer 4`} value={answer4} setValue={setAnswer4} />
+      <InputNumber
+        label={"Correct"}
+        value={correctAnswer}
+        setValue={setCorrectAnswer}
+      ></InputNumber>
 
       <Button onClick={removeQuestion}>Remove</Button>
     </StyledQuestionContainer>
