@@ -68,10 +68,16 @@ export function socketEvents({ setValue }: any) {
   socket.on("hostDisconnect", () => {
     console.log("hostDisconnect");
   });
-  socket.on("gameStartedPlayer", () => {
+  socket.on("gameStartedPlayer", (data:any) => {
     console.log("gameStartedPlayer");
     if(history.location.pathname === "/playerLobby") 
     history.push("/playerGame?id=" + socket.id);
+
+    setValue((state: any) => {
+      return { ...state, 
+        currentQuestion: data,
+      };
+    });
   });
   
   // PLAYER GAME

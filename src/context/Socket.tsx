@@ -7,7 +7,14 @@ const defaultContext = {
   nameText: "",
   scoreText:"",
   correct: false,
-  questionOver: false
+  questionOver: false,
+  currentQuestion: {
+    q1: "",
+    a1: "",
+    a2: "",
+    a3: "",
+    a4: "",
+  },
 };
 
 export const SocketContext = createContext(defaultContext);

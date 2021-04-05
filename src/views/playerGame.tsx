@@ -12,7 +12,7 @@ export default function PlayerGame() {
   const query = useQuery();
   const id = query.get("id");
   const [playerAnswered, setPlayerAnswered] = useState(false);
-  const { nameText, scoreText, questionOver, correct } = useContext(SocketContext);
+  const { nameText, scoreText, questionOver, correct, currentQuestion } = useContext(SocketContext);
   
   let message = "";
 
@@ -41,10 +41,11 @@ export default function PlayerGame() {
       <h4 id = "rankText"></h4>
     </div>
     <h2 id = "message">{message}</h2>
-    <button onClick={() =>answerSubmitted(1)} id="answer1" ></button>
-    <button onClick={() =>answerSubmitted(2)} id="answer2" ></button>
+    <h1>question : {currentQuestion.q1}</h1>
+    <button onClick={() =>answerSubmitted(1)}>{currentQuestion.a1}</button>
+    <button onClick={() =>answerSubmitted(2)}>{currentQuestion.a2}</button>
     <br></br>
-    <button onClick={() =>answerSubmitted(3)} id="answer3" ></button>
-    <button onClick={() =>answerSubmitted(4)} id="answer4" ></button>
+    <button onClick={() =>answerSubmitted(3)}>{currentQuestion.a3}</button>
+    <button onClick={() =>answerSubmitted(4)}>{currentQuestion.a4}</button>
   </StyledPlayerGame>;
 }

@@ -1,12 +1,15 @@
 # kahoot-like-front
 
-1. Créer la room :
+BUGS :
+- Choix de la bonne réponse
 
-   - Join(room)
-   - Créer en base le kahoot
-   - Obtenir le code
+A IMPLEMENTER pour V0 :
+- Passer a la question suivante
+- Afficher le score final
+- Afficher en direct les informations pour le host
 
-2. Rejoindre la room :
+FEATURES V1 PRETE A ETRE IMPLEMENTEES : 
+- Style
+- Pouvoir choisir un questionnaire déjà créé en base
 
-   - Rentrer le nom, le code
-   - Récupérer les données
+Temps estimé (V0 et features V1) : 2j

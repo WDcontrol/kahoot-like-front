@@ -6,7 +6,6 @@ import UserList from '../components/userList';
 import { playerJoin } from '../sockets/emit';
 import { useHistory } from "react-router-dom";
 
-
 const StyledPlayerLobby = styled.div``;
 
 export default function PlayerLobby() {

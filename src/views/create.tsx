@@ -8,8 +8,8 @@ const StyledCreate = styled.div``;
 export default function Create() {
   const defaultQuestion: Question = {
     question: "What's the color's of Henri IV white horse ?",
-    answers: ["red", "white", "black", "yellow"],
-    correct: 2,
+    answers: ["white", "red", "black", "yellow"],
+    correct: 1,
   };
 
   const [questions, setQuestions] = useState<Question[]>([defaultQuestion]);
